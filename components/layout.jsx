@@ -2,11 +2,10 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { NAME, SITE_TITLE } from '../constants';
 import utilStyles from '../styles/utils.module.css';
 import styles from "../styles/Layout.module.css";
 
-const name = 'Calvin Wilson';
-export const siteTitle = 'Next.js Sample Website';
 
 const Layout = ({ children, home = false }) => (
   <div className={styles.container}>
@@ -19,10 +18,10 @@ const Layout = ({ children, home = false }) => (
       <meta
         property="og:image"
         content={`https://og-image.vercel.app/${encodeURI(
-          siteTitle,
+          SITE_TITLE,
         )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
       />
-      <meta name="og:title" content={siteTitle} />
+      <meta name="og:title" content={SITE_TITLE} />
       <meta name="twitter:card" content="summary_large_image" />
     </Head>
     <header className={styles.header}>
@@ -36,7 +35,7 @@ const Layout = ({ children, home = false }) => (
             width={144}
             alt=""
           />
-          <h1 className={utilStyles.heading2Xl}>{name}</h1>
+          <h1 className={utilStyles.heading2Xl}>{NAME}</h1>
         </>
       ) : (
         <>
@@ -52,7 +51,7 @@ const Layout = ({ children, home = false }) => (
           </Link>
           <h2 className={utilStyles.headingLg}>
             <Link href="/" className={utilStyles.colorInherit}>
-              {name}
+              {NAME}
             </Link>
           </h2>
         </>
