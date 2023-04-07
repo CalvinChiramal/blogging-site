@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 
 import Date from "../components/Date";
-import Layout from "../components/something";
+import Layout from "../components/Layout";
 import { SITE_TITLE } from "../constants";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPosts } from "../utils/posts";
