@@ -1,6 +1,8 @@
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
+import { remark } from 'remark';
+import html from 'remark-html';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
@@ -35,13 +37,19 @@ export const getPostIds = () => getFileNames().map(
     })
 );
 
-export const getPostData = id => {
+export const getPostData = async id => {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
 
+  // Use remark to convert markdown into HTML string
+  const processedContent = await remark()
+    .use(html)
+    .process(matterResult.content);
+  const htmlContent = processedContent.toString();
+
   // Combine the data with the id
-  return { id, ...matterResult.data };
+  return { id, body: htmlContent, ...matterResult.data };
 };
