@@ -1,15 +1,18 @@
-import Head from 'next/head';
+import Head from "next/head";
 
-import Date from '../../components/Date';
-import Layout from '../../components/Layout';
-import utilStyles from '../../styles/utils.module.css';
-import { getPostIds, getPostData } from '../../utils/posts';
+import Date from "../../components/Date";
+import Layout from "../../components/something";
+import utilStyles from "../../styles/utils.module.css";
+import { getPostIds, getPostData } from "../../utils/posts";
 
-export const getStaticPaths = async () =>
-  ({ paths: getPostIds(), fallback: false });
+export const getStaticPaths = async () => ({
+  paths: getPostIds(),
+  fallback: false,
+});
 
-export const getStaticProps = async ({ params }) =>
-  ({ props: { post: await getPostData(params.id) } });
+export const getStaticProps = async ({ params }) => ({
+  props: { post: await getPostData(params.id) },
+});
 
 const Post = ({ post }) => (
   <Layout>
