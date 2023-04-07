@@ -4,10 +4,10 @@ import matter from 'gray-matter';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
-export function getSortedPostsData() {
+export const getSortedPosts = () => {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData = fileNames.map((fileName) => {
+  const allPosts = fileNames.map((fileName) => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, '');
 
@@ -19,17 +19,8 @@ export function getSortedPostsData() {
     const matterResult = matter(fileContents);
 
     // Combine the data with the id
-    return {
-      id,
-      ...matterResult.data,
-    };
+    return { id, ...matterResult.data };
   });
   // Sort posts by date
-  return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
+  return allPosts.sort((a, b) => a.date < b.date ? 1 : -1);
 }
