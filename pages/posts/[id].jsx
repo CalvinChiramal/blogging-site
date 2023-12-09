@@ -20,7 +20,7 @@ const Post = ({ post }) => (
       <title>{post.title}</title>
     </Head>
     <article>
-      <h1 className="utilStyles.headingXl">{post.title}</h1>
+      <h1 className={utilStyles.headingXl}>{post.title}</h1>
       <div className={utilStyles.lightText}>
         <Date dateTime={post.date} format="MMMM DD, YYYY" />
       </div>
