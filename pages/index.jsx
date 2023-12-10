@@ -4,7 +4,6 @@ import Link from "next/link";
 import Date from "../components/Date";
 import Layout from "../components/Layout";
 import { SITE_TITLE } from "../constants";
-import utilStyles from "../styles/utils.module.css";
 import { getSortedPosts } from "../utils/posts";
 
 export const getStaticProps = async () => ({
@@ -17,21 +16,21 @@ const Home = ({ posts }) => {
       <Head>
         <title>{SITE_TITLE}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
+      <section className="heading-md">
         <p>
           {
             "Hey, I'm a full stack developer primarily working with React and Rails. This is my first website using Next.JS."
           }
         </p>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
+      <section className="heading-md pt-px">
+        <h2 className="heading-lg">Blog</h2>
+        <ul className="list">
           {posts.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
+            <li className="list-item" key={id}>
               <Link href={`/posts/${id}`}>{title}</Link>
               <br />
-              <small className={utilStyles.lightText}>
+              <small className="light-text">
                 <Date dateTime={date} format="MMMM DD, YYYY" />
               </small>
             </li>

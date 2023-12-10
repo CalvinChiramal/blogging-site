@@ -1,4 +1,4 @@
-.heading2Xl {
+.heading-2xl {
   font-size: 2.5rem;
   line-height: 1.2;
   font-weight: 800;
@@ -6,7 +6,7 @@
   margin: 1rem 0;
 }
 
-.headingXl {
+.heading-xl {
   font-size: 2rem;
   line-height: 1.3;
   font-weight: 800;
@@ -14,27 +14,15 @@
   margin: 1rem 0;
 }
 
-.headingLg {
+.heading-lg {
   font-size: 1.5rem;
   line-height: 1.4;
   margin: 1rem 0;
 }
 
-.headingMd {
+.heading-md {
   font-size: 1.2rem;
   line-height: 1.5;
-}
-
-.borderCircle {
-  border-radius: 9999px;
-}
-
-.colorInherit {
-  color: inherit;
-}
-
-.padding1px {
-  padding-top: 1px;
 }
 
 .list {
@@ -43,10 +31,10 @@
   margin: 0;
 }
 
-.listItem {
+.list-item {
   margin: 0 0 1.25rem;
 }
 
-.lightText {
+.light-text {
   color: #666;
 }

@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { NAME, SITE_TITLE } from "../constants";
-import utilStyles from "../styles/utils.module.css";
 import styles from "../styles/Layout.module.css";
 
 const Layout = ({ children, home = false }) => (
@@ -23,18 +22,18 @@ const Layout = ({ children, home = false }) => (
       <meta name="og:title" content={SITE_TITLE} />
       <meta name="twitter:card" content="summary_large_image" />
     </Head>
-    <header className={styles.header}>
+    <header className="flex flex-col items-center">
       {home ? (
         <>
           <Image
             priority
             src="/images/profile.jpg"
-            className={utilStyles.borderCircle}
+            className="rounded-full"
             height={144}
             width={144}
             alt=""
           />
-          <h1 className={utilStyles.heading2Xl}>{NAME}</h1>
+          <h1 className="heading-2xl">{NAME}</h1>
         </>
       ) : (
         <>
@@ -42,14 +41,14 @@ const Layout = ({ children, home = false }) => (
             <Image
               priority
               src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
+              className="rounded-full"
               height={108}
               width={108}
               alt=""
             />
           </Link>
-          <h2 className={utilStyles.headingLg}>
-            <Link href="/" className={utilStyles.colorInherit}>
+          <h2 className="heading-lg">
+            <Link href="/" className="text-inherit">
               {NAME}
             </Link>
           </h2>
