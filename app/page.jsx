@@ -1,21 +1,14 @@
-import Head from "next/head";
 import Link from "next/link";
 
-import Date from "../components/Date";
-import Layout from "../components/Layout";
-import { SITE_TITLE } from "../constants";
-import { getSortedPosts } from "../utils/posts";
+import Date from "@components/Date";
+import Layout from "@components/Layout";
+import { getSortedPosts } from "@utils/posts";
 
-export const getStaticProps = async () => ({
-  props: { posts: getSortedPosts() },
-});
+const Home = () => {
+  const posts = getSortedPosts();
 
-const Home = ({ posts }) => {
   return (
     <Layout home>
-      <Head>
-        <title>{SITE_TITLE}</title>
-      </Head>
       <section className="heading-md">
         <p>
           {
