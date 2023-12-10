@@ -21,9 +21,14 @@ const Home = () => {
         <ul className="list">
           {posts.map(({ id, date, title }) => (
             <li className="list-item" key={id}>
-              <Link href={`/posts/${id}`}>{title}</Link>
+              <Link
+                className="text-blue-600 dark:text-purple-500"
+                href={`/posts/${id}`}
+              >
+                {title}
+              </Link>
               <br />
-              <small className="light-text">
+              <small>
                 <Date dateTime={date} format="MMMM DD, YYYY" />
               </small>
             </li>

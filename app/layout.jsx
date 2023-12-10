@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@components/ThemeProvider";
 import "@styles/global.scss";
 
 export const metadata = {
@@ -11,7 +12,9 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 };

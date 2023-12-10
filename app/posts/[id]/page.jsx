@@ -25,7 +25,7 @@ const Post = async ({ params }) => {
     <Layout>
       <article>
         <h1 className="heading-xl">{post.title}</h1>
-        <div className="light-text">
+        <div>
           <Date dateTime={post.date} format="MMMM DD, YYYY" />
         </div>
         <div dangerouslySetInnerHTML={{ __html: post.body }} />
