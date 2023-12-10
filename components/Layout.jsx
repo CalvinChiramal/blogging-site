@@ -3,10 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { NAME, SITE_TITLE } from "../constants";
-import styles from "../styles/Layout.module.css";
 
 const Layout = ({ children, home = false }) => (
-  <div className={styles.container}>
+  <div className="container">
     <Head>
       <link rel="icon" href="/favicon.ico" />
       <meta
@@ -57,7 +56,7 @@ const Layout = ({ children, home = false }) => (
     </header>
     <main>{children}</main>
     {!home && (
-      <div className={styles.backToHome}>
+      <div className="mt-12">
         <Link href="/">← Back to home</Link>
       </div>
     )}
