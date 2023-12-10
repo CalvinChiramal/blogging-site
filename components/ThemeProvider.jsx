@@ -5,8 +5,12 @@ import { createContext, useEffect, useState } from "react";
 export const ThemeContext = createContext({});
 
 export const ThemeProvider = ({ children }) => {
+  const getFromLocalStorage = () =>
+    typeof window !== "undefined" &&
+    JSON.parse(window.localStorage.getItem("DARK_THEME"));
+
   const [isDarkTheme, setIsDarkTheme] = useState(
-    JSON.parse(localStorage.getItem("DARK_THEME")) || false
+    getFromLocalStorage() || false
   );
 
   const toggleTheme = () => setIsDarkTheme(isDarkTheme => !isDarkTheme);

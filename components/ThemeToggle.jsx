@@ -23,7 +23,7 @@ const ThemeToggle = () => {
         <input
           type="checkbox"
           checked={isDarkTheme}
-          onClick={toggleTheme}
+          onChange={toggleTheme}
           className="checkbox"
           id={id}
         />
